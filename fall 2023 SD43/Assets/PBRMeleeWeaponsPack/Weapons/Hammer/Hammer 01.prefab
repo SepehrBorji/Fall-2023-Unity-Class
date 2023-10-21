@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 23422747613619520}
   - component: {fileID: -1714031090546505709}
   - component: {fileID: -6159280786964925489}
+  - component: {fileID: 1773462788110524872}
   m_Layer: 0
   m_Name: Hammer 01
   m_TagString: Weapon
@@ -184,7 +185,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -203,4 +204,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e5a4762941d5c47b7efe0ced4582dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 3a10e16d18231cd4fac7d0403b37f749, type: 2}
+--- !u!95 &1773462788110524872
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704119975537380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b812b6588f8ae945b9813eee2a289a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
