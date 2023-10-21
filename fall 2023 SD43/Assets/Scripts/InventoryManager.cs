@@ -19,14 +19,25 @@ public class InventoryManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("Weapon"))
         {
             // add item into inventory
             ItemPickup itemScript = other.gameObject.GetComponent<ItemPickup>();
             Item newItem = itemScript.GetItem();
-            inventory.Add(newItem);
+            AddItem(newItem);
             Destroy(other.gameObject);
-        } // TO DO: MAKE ITEM TAG
+        }
+        // TO DO: SHOW INVENTORY CONTENTS EVERYTIME SOMETHING IS ADDED OR REMOVED
+    }
+
+    private void AddItem(Item item)
+    {
+        inventory.Add(item);
+        Debug.Log("Items: ");
+        foreach (Item currentItem in inventory)
+        {
+            Debug.Log("Item Name: " + currentItem.itemName);
+        }
     }
 
 }
