@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<Item> inventory = new List<Item>();
+    [HideInInspector] public List<Item> inventory = new List<Item>();
+    public GameObject inventoryItemPrefab;
+    public Transform toolbarTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,16 +31,32 @@ public class InventoryManager : MonoBehaviour
             AddItem(newItem);
             Destroy(other.gameObject);
         }
-        // TO DO: SHOW INVENTORY CONTENTS EVERYTIME SOMETHING IS ADDED OR REMOVED
     }
 
     private void AddItem(Item item)
     {
         inventory.Add(item);
-        Debug.Log("Items: ");
-        foreach (Item currentItem in inventory)
+        ListItems();
+    }
+
+    public void RemoveItem(Item item)
+    {
+        inventory.Remove(item);
+        ListItems();
+    }
+
+    private void ListItems()
+    {
+        foreach (Item item in inventory)
         {
-            Debug.Log("Item Name: " + currentItem.itemName);
+            GameObject obj = Instantiate(inventoryItemPrefab, toolbarTransform);
+
+            Text itemNameText = obj.GetComponentInChildren<Text>();
+            itemNameText.text = item.itemName;
+
+            Image itemIconImage = obj.GetComponent<Image>();
+            itemIconImage.sprite = item.itemIcon;
+
         }
     }
 

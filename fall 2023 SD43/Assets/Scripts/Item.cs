@@ -8,6 +8,6 @@ public class Item : ScriptableObject
 {
     [SerializeField] private int id = 0;
     public string itemName;
-    [SerializeField] private Sprite itemIcon;
+    public Sprite itemIcon;
     [SerializeField] private int damage = 0;
 }
