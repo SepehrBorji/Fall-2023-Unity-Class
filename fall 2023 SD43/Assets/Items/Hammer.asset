@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   itemName: 'Hammer '
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 866baa6e86a563f4c9c540cc52211fec, type: 3}
   damage: 15

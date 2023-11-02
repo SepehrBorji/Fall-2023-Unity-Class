@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   itemName: Machete
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: c93eb9ff122374c488890aad7cf1dbac, type: 3}
   damage: 50
