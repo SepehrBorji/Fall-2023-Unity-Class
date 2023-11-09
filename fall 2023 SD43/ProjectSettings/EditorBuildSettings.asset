@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ModularFirstPersonController/DemoScene/Demo.unity
+    guid: 6dedc6c52eac3354a9ff2957caf19524
+  - enabled: 1
+    path: Assets/ModularFirstPersonController/DemoScene/Level 2.unity
+    guid: f54caf54c99f178448ea13d4832d94ae
   m_configObjects: {}

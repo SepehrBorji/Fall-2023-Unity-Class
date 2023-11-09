@@ -9,7 +9,6 @@ public class InventoryManager : MonoBehaviour
     [HideInInspector] public List<Item> inventory = new List<Item>();
     public GameObject inventoryItemPrefab;
     public Transform toolbarTransform;
-    private InventorySlot inventorySlotScript;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        RemoveItemFromKeyPress();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +46,25 @@ public class InventoryManager : MonoBehaviour
         ListItems();
     }
 
+    public void RemoveItem(int index)
+    {
+        inventory.RemoveAt(index);
+        ListItems();
+    }
+
+    void RemoveItemFromKeyPress()
+    {
+        // check if one of the number keys were pressed
+        for (int number = 1; number <= 9; number++)
+        {
+            if (Input.GetKeyDown(number.ToString()))
+            {
+                RemoveItem(number - 1);
+                return;
+            }
+        }
+    }
+
     private void ListItems()
     {
         // clear the inventory UI
@@ -59,9 +77,6 @@ public class InventoryManager : MonoBehaviour
         foreach (Item item in inventory)
         {
             GameObject obj = Instantiate(inventoryItemPrefab, toolbarTransform);
-
-            inventorySlotScript = obj.GetComponent<InventorySlot>();
-            inventorySlotScript.currentItem = item;
 
             TextMeshProUGUI itemNameText = obj.GetComponentInChildren<TextMeshProUGUI>();
             itemNameText.text = item.itemName;
