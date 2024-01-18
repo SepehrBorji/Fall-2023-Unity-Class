@@ -11,7 +11,8 @@ public class MainManager : MonoBehaviour
         public Color TeamColor;
     }
 
-    public static MainManager Instance;
+    public static MainManager Instance { get; private set; }
+
     public Color TeamColor;
 
     public void SaveColor()
